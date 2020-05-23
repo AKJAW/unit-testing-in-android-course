@@ -48,7 +48,7 @@ public class FetchUserUseCaseSyncTestRef {
         mFetchUserHttpEndpointSyncTestDouble = new FetchUserHttpEndpointSyncTestDouble();
 
         // TODO: assign your implementation of FetchUserUseCaseSync to SUT
-        // SUT = new FetchUserUseCaseSyncImpl(mFetchUserHttpEndpointSyncTestDouble, mUsersCacheMock);
+         SUT = new FetchUserUseCaseSyncImpl(mUsersCacheMock, mFetchUserHttpEndpointSyncTestDouble);
 
         userNotInCache();
         endpointSuccess();

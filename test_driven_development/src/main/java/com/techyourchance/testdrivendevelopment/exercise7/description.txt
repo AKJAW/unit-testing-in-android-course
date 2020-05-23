@@ -8,8 +8,11 @@ The three rules:
 
 The requirements:
 1) If the server request completes successfully, then use case should indicate successful completion of the flow.
+
 2) If the server request completes successfully, then the fetched reputation should be returned
+
 3) If the server request fails for any reason, the use case should indicate that the flow failed.
+
 4) If the server request fails for any reason, the returned reputation should be 0.
 
 You should:

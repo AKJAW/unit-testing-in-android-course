@@ -3,7 +3,9 @@ package com.techyourchance.testdrivendevelopment.exercise6;
 import org.jetbrains.annotations.Nullable;
 import com.techyourchance.testdrivendevelopment.exercise6.users.User;
 
-interface FetchUserUseCaseSync {
+import java.util.Objects;
+
+public interface FetchUserUseCaseSync {
 
     enum Status {
         SUCCESS,
@@ -26,11 +28,28 @@ interface FetchUserUseCaseSync {
             return mStatus;
         }
 
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            UseCaseResult that = (UseCaseResult) o;
+            return mStatus == that.mStatus &&
+                    Objects.equals(mUser, that.mUser);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(mStatus, mUser);
+        }
+
         @Nullable
         public User getUser() {
             return mUser;
         }
+
+
     }
+
 
     UseCaseResult fetchUserSync(String userId);
 
