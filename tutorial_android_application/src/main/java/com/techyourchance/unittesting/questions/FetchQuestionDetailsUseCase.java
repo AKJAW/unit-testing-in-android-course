@@ -22,7 +22,6 @@ public class FetchQuestionDetailsUseCase extends BaseObservable<FetchQuestionDet
             @Override
             public void onQuestionDetailsFetched(QuestionSchema question) {
                 notifySuccess(question);
-
             }
 
             @Override
